@@ -17,7 +17,7 @@
         android:fontFamily="@font/ubuntu_medium"
         android:gravity="center"
         android:includeFontPadding="false"
-        android:text="@string/miscellanous"
+        android:text="@string/phuchau.tea"
         android:textColor="@color/white"
         android:textSize="@dimen/_13ssp"/>
     

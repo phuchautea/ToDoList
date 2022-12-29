@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -19,6 +20,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true">
@@ -57,7 +59,7 @@
                 android:layout_marginTop="@dimen/_15sdp"
                 android:background="@null"
                 android:fontFamily="@font/ubuntu_bold"
-                android:hint="Notes Title"
+                android:hint="Note Title"
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
                 android:includeFontPadding="false"
@@ -171,28 +173,28 @@
 
             </LinearLayout>
 
-            <EditText
-                android:id="@+id/inputNote"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_12sdp"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:layout_marginEnd="@dimen/_12sdp"
-                android:layout_marginBottom="@dimen/_15sdp"
-                android:background="@null"
-                android:fontFamily="@font/ubuntu_regular"
-                android:gravity="top"
-                android:hint="@string/type_note_here"
-                android:importantForAutofill="no"
-                android:includeFontPadding="false"
-                android:inputType="textMultiLine"
-                android:minHeight="@dimen/_100sdp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/colorTextHint"
-                android:textSize="@dimen/_13ssp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/layoutWebURL" />
-
+    <EditText
+        android:windowSoftInputMode="adjustResize"
+        android:id="@+id/inputNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:background="@null"
+        android:fontFamily="@font/ubuntu_regular"
+        android:gravity="top"
+        android:hint="@string/type_note_here"
+        android:importantForAutofill="no"
+        android:includeFontPadding="false"
+        android:inputType="textMultiLine"
+        android:minHeight="@dimen/_100sdp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/colorTextHint"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutWebURL" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

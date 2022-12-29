@@ -31,6 +31,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -57,7 +58,7 @@ public class  CreateNoteActivity extends AppCompatActivity {
     private String selectedImagePath;
 
 
-    private static final int REQUEST_CODE_STORAGE_PERMISSION =1;
+    private static final int REQUEST_CODE_STORAGE_PERMISSION = 1;
     private static final int REQUEST_CODE_SELECT_IMAGE = 2;
 
     private AlertDialog dialogAddURL;
@@ -90,7 +91,6 @@ public class  CreateNoteActivity extends AppCompatActivity {
         imageNote = findViewById(R.id.imageNote);
         textWebURL = findViewById(R.id.textWebURL);
         layoutWebURL = findViewById(R.id.layoutWebURL);
-
         textDateTime.setText(
                 new SimpleDateFormat("EEEE, dd MMMM yyyy HH:mm a", Locale.getDefault())
                         .format(new Date())
@@ -170,7 +170,7 @@ public class  CreateNoteActivity extends AppCompatActivity {
 
     private void saveNote(){
         if(inputNoteTitle.getText().toString().trim().isEmpty()){
-            Toast.makeText(this,"Note title cant' t be empty!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Tiêu đề không được để trống!!!", Toast.LENGTH_SHORT).show();
             return;
         }else if(inputNoteSubTitle.getText().toString().trim().isEmpty()
                 && inputNoteText.getText().toString().trim().isEmpty()){
