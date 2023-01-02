@@ -145,8 +145,8 @@ public class  CreateNoteActivity extends AppCompatActivity {
             }
 
         }
-        initMiscellanous();
-       setSubTitleIndicatorColor();
+        initLayoutOptions();
+        setSubTitleIndicatorColor();
     }
 
     private void setViewOrUpdateNote(){
@@ -170,7 +170,7 @@ public class  CreateNoteActivity extends AppCompatActivity {
 
     private void saveNote(){
         if(inputNoteTitle.getText().toString().trim().isEmpty()){
-            Toast.makeText(this,"Tiêu đề không được để trống!!!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Title can't be empty!!!", Toast.LENGTH_SHORT).show();
             return;
         }else if(inputNoteSubTitle.getText().toString().trim().isEmpty()
                 && inputNoteText.getText().toString().trim().isEmpty()){
@@ -214,10 +214,10 @@ public class  CreateNoteActivity extends AppCompatActivity {
         new SaveNoteTask().execute();
     }
 
-    private void initMiscellanous(){
-        final LinearLayout layoutMiscellanous=findViewById(R.id.layoutMiscellaneous);
+    private void initLayoutOptions(){
+        final LinearLayout layoutMiscellanous=findViewById(R.id.layoutOptions);
         final BottomSheetBehavior bottomSheetBehavior=BottomSheetBehavior.from(layoutMiscellanous);
-        layoutMiscellanous.findViewById(R.id.textMiscellaneous).setOnClickListener(new View.OnClickListener() {
+        layoutMiscellanous.findViewById(R.id.textOptionTitle).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(bottomSheetBehavior.getState()!=BottomSheetBehavior.STATE_EXPANDED) {

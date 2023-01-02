@@ -97,6 +97,20 @@ public class MainActivity extends AppCompatActivity implements NotesListener {
             @Override
             public void afterTextChanged(Editable s) {
                 if(noteList.size()!=0){
+                    // Filter Color: All
+                    final ImageView imageColor0 = findViewById(R.id.imagePickColor0);
+                    final ImageView imageColor1 = findViewById(R.id.imagePickColor1);
+                    final ImageView imageColor2 = findViewById(R.id.imagePickColor2);
+                    final ImageView imageColor3 = findViewById(R.id.imagePickColor3);
+                    final ImageView imageColor4 = findViewById(R.id.imagePickColor4);
+                    final ImageView imageColor5 = findViewById(R.id.imagePickColor5);
+                    imageColor0.setImageResource(R.drawable.ic_done);
+                    imageColor1.setImageResource(0);
+                    imageColor2.setImageResource(0);
+                    imageColor3.setImageResource(0);
+                    imageColor4.setImageResource(0);
+                    imageColor5.setImageResource(0);
+                    // Search Note
                     notesAdapter.searchNotes(s.toString());
                 }
             }
@@ -130,6 +144,103 @@ public class MainActivity extends AppCompatActivity implements NotesListener {
             @Override
             public void onClick(View view) {
                 showAddURLDialog();
+            }
+        });
+        // Filter By Color
+        final ImageView imageColor0 = findViewById(R.id.imagePickColor0);
+        final ImageView imageColor1 = findViewById(R.id.imagePickColor1);
+        final ImageView imageColor2 = findViewById(R.id.imagePickColor2);
+        final ImageView imageColor3 = findViewById(R.id.imagePickColor3);
+        final ImageView imageColor4 = findViewById(R.id.imagePickColor4);
+        final ImageView imageColor5 = findViewById(R.id.imagePickColor5);
+
+        findViewById(R.id.imagePickColor0).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(noteList.size()!=0) {
+                    notesAdapter.searchColorNotes("");
+                }
+                imageColor0.setImageResource(R.drawable.ic_done);
+                imageColor1.setImageResource(0);
+                imageColor2.setImageResource(0);
+                imageColor3.setImageResource(0);
+                imageColor4.setImageResource(0);
+                imageColor5.setImageResource(0);
+            }
+        });
+
+        findViewById(R.id.imagePickColor1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(noteList.size()!=0) {
+                    notesAdapter.searchColorNotes("#333333");
+                }
+                imageColor0.setImageResource(0);
+                imageColor1.setImageResource(R.drawable.ic_done);
+                imageColor2.setImageResource(0);
+                imageColor3.setImageResource(0);
+                imageColor4.setImageResource(0);
+                imageColor5.setImageResource(0);
+            }
+        });
+
+        findViewById(R.id.imagePickColor2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(noteList.size()!=0) {
+                    notesAdapter.searchColorNotes("#FDBE3B");
+                }
+                imageColor0.setImageResource(0);
+                imageColor1.setImageResource(0);
+                imageColor2.setImageResource(R.drawable.ic_done);
+                imageColor3.setImageResource(0);
+                imageColor4.setImageResource(0);
+                imageColor5.setImageResource(0);
+            }
+        });
+
+        findViewById(R.id.imagePickColor3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(noteList.size()!=0) {
+                    notesAdapter.searchColorNotes("#FF4842");
+                }
+                imageColor0.setImageResource(0);
+                imageColor1.setImageResource(0);
+                imageColor2.setImageResource(0);
+                imageColor3.setImageResource(R.drawable.ic_done);
+                imageColor4.setImageResource(0);
+                imageColor5.setImageResource(0);
+            }
+        });
+
+        findViewById(R.id.imagePickColor4).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(noteList.size()!=0) {
+                    notesAdapter.searchColorNotes("#3A52FC");
+                }
+                imageColor0.setImageResource(0);
+                imageColor1.setImageResource(0);
+                imageColor2.setImageResource(0);
+                imageColor3.setImageResource(0);
+                imageColor4.setImageResource(R.drawable.ic_done);
+                imageColor5.setImageResource(0);
+            }
+        });
+
+        findViewById(R.id.imagePickColor5).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(noteList.size()!=0) {
+                    notesAdapter.searchColorNotes("#000000");
+                }
+                imageColor0.setImageResource(0);
+                imageColor1.setImageResource(0);
+                imageColor2.setImageResource(0);
+                imageColor3.setImageResource(0);
+                imageColor4.setImageResource(0);
+                imageColor5.setImageResource(R.drawable.ic_done);
             }
         });
     }

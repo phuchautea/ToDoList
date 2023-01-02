@@ -1,5 +1,6 @@
 package com.example.todolist.adapters;
 
+import android.annotation.SuppressLint;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
@@ -51,7 +52,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NoteViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull NoteViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         holder.setNote(notes.get(position));
         holder.layoutNote.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,7 +140,32 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHold
             }
         },500);
     }
+    public void searchColorNotes(final String searchColor){
+        timer=new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                if (searchColor.trim().isEmpty()) {
+                    notes = notesSource;
 
+                } else {
+                    ArrayList<Note> temp = new ArrayList<>();
+                    for (Note note : notesSource) {
+                        if (note.getColor().toLowerCase().contains(searchColor.toLowerCase())) {
+                            temp.add(note);
+                        }
+                    }
+                    notes = temp;
+                }
+                new Handler(Looper.getMainLooper()).post(new Runnable() {
+                    @Override
+                    public void run() {
+                        notifyDataSetChanged();
+                    }
+                });
+            }
+        },500);
+    }
     public void cancelTimer(){
         if(timer!=null){
             timer.cancel();
